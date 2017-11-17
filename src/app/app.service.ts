@@ -22,7 +22,6 @@ export class AppService {
     }
     const options = {
       http: {
-        timeout: 3000,
         headers: {
           'x-requested-with': 'XMLHttpRequest'
         }

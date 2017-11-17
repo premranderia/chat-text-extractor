@@ -21,7 +21,7 @@ export class AppComponent {
   private loading: boolean = false;
   private maxStringLength = 10000;
 
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService) { }
 
   /**
    * On Submit
@@ -35,7 +35,7 @@ export class AppComponent {
     // Replace multiple space with 1 and split the string
     const splitStr: Array<string> = this.inputString.replace(/\s\s+/g, ' ').split(' ');
 
-    const result = {
+    this.output = {
       mentions: [],
       emoticons: [],
       links: []
@@ -46,21 +46,20 @@ export class AppComponent {
       let elem: string = splitStr[i];
 
       if (this.isValidUrl(elem)) {
-        result.links.push(await this.extractLinks(elem));
+        this.output.links.push(await this.extractLinks(elem));
       } else if (this.isValidMentions(elem)) {
         const mentions = this.extractMentions(elem);
         if (mentions) {
-          result.mentions.push(mentions);
+          this.output.mentions.push(mentions);
         }
       } else if (this.isValidEmoticons(elem)) {
         const emoticons = this.extractEmoticons(elem);
         if (emoticons) {
-          result.emoticons.push(emoticons);
+          this.output.emoticons.push(emoticons);
         }
       }
 
     }
-    this.output = result;
     this.loading = false;
   }
 
