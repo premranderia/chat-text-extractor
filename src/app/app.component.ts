@@ -21,10 +21,7 @@ export class AppComponent {
   private loading: boolean = false;
   private maxStringLength = 10000;
 
-  constructor(private appService: AppService) {
-    // this.inputString = `@bob @john (success) such a cool feature;
-    // https://twitter.com/jdorfman/status/430511497475670016 http://www.nbcolympics.com`;
-  }
+  constructor(private appService: AppService) {}
 
   /**
    * On Submit

@@ -1,18 +1,19 @@
 # HipChat Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.1.
+## To Run Locally
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Do a git clone
+2. ng serve --o
+3. Open browser http://localhost:4200
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
+1. ng test
 
 ## Code Structure
 1. App.component: Includes component that interacts with template
 2. App.service: Service to make calls to fetch title (metadata)
+3. No need to do npm i. All dependencies are deployed on git
+
 
 
