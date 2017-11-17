@@ -16,4 +16,9 @@
 3. No need to do npm i. All dependencies are deployed on git
 
 
+## Assumptions
+1. Mentions can only have 1 @mention (as used my many chats and apps online)
+  eg: Valid: @rob Invalid: @@rob
+
+
 
