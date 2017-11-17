@@ -7,16 +7,15 @@
     </div>
 
     <div class="col-xs-8">
-      <input type="text" class="text-input" [(ngModel)]="inputString"/>  
+      <input type="text" class="text-input" [(ngModel)]="inputString" />  
       <input type="button" class="submit-btn" [disabled]="!inputString" (click)="onSubmit(inputString)" value="Extract" >
     </div>
 
   </div>
   <div class="row">
     <label>Output:</label> 
-    <div class="output">
-      {{ output }}
+    <pre class="output">{{ output | json }}
       <div class="loading" [hidden]="!loading">..Extracting..</div>
-    </div>
+    </pre>
   </div>
 </div>

@@ -1,10 +1,10 @@
 {
-  "name": "my-app2",
+  "name": "chat-text-extractor",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

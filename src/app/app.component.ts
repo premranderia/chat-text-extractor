@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { AppService } from './app.service';
-import validUrl from 'valid-url';
-import twitter from 'twitter-text';
-import isAlphaNumeric from 'is-alphanumeric';
+import * as validUrl from 'valid-url';
+import * as twitter from 'twitter-text';
+import * as isAlphaNumeric from 'is-alphanumeric';
 
 @Component({
   selector: 'my-app',
@@ -22,8 +22,8 @@ export class AppComponent {
   private maxStringLength = 10000;
 
   constructor(private appService: AppService) {
-    this.inputString = `@bob @john (success) such a cool feature; 
-    https://twitter.com/jdorfman/status/430511497475670016 http://www.nbcolympics.com`;
+    // this.inputString = `@bob @john (success) such a cool feature;
+    // https://twitter.com/jdorfman/status/430511497475670016 http://www.nbcolympics.com`;
   }
 
   /**
@@ -63,8 +63,7 @@ export class AppComponent {
       }
 
     }
-
-    this.output = JSON.stringify(result, undefined, 4);
+    this.output = result;
     this.loading = false;
   }
 
@@ -73,6 +72,9 @@ export class AppComponent {
    * @param str
    */
   private isValidMentions(str: string): boolean {
+    if (!str) {
+      return false;
+    }
     return str.charAt(0) === this.mentionString;
   }
 
@@ -96,6 +98,9 @@ export class AppComponent {
    * @param str
    */
   private extractMentions(str): Array<string> {
+    if (!str) {
+      return;
+    }
     return twitter.extractMentions(str)[0];
   }
 
@@ -104,7 +109,12 @@ export class AppComponent {
    * @param str
    */
   private async extractLinks(str: string): Promise<Link> {
-    const title: string = await this.appService.fetchMetaData(str);
+    let title: string;
+    try {
+      title = await this.appService.fetchMetaData(str);
+    } catch (e) {
+      title = e;
+    }
     return {
       url: str,
       title
