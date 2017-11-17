@@ -18,6 +18,6 @@
 ## Assumptions
 1. Mentions can only have 1 @mention (as used my many chats and apps online)
   eg: Valid: @rob Invalid: @@rob
-
+2. Max string length is assumed to be 10K chars 
 
 
