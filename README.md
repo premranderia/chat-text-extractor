@@ -1,4 +1,27 @@
 # Chat Text Extractor
+1. Mentions - A way to mention a user. Always starts with an '@' and ends when hitting a non-word character.
+2. Emoticons - Custom emoticons which are alphanumeric strings, no longer than 15 characters, contained in parenthesis. Assumd dthat anything matching this format is an emoticon. 
+3. Links - Any URLs contained in the message, along with the page's title. (https://cors-anywhere.herokuapp.com/ is used to avoid CORS)
+
+## Input 
+"@bob @john (success)  (hatred)) such a cool feature; https://google.com"
+
+## Output:
+{
+  "mentions": [
+    "bob",
+    "john"
+  ],
+  "emoticons": [
+    "success"
+  ],
+  "links": [
+    {
+      "url": "https://twitter.com/jdorfman/status/430511497475670016",
+      "title": "Google"
+    }
+  ]
+}
 
 ## To Run Locally
 
