@@ -1,4 +1,4 @@
-# HipChat Challenge
+# Chat Text Extractor
 
 ## To Run Locally
 
