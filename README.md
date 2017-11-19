@@ -4,9 +4,11 @@
 3. Links - Any URLs contained in the message, along with the page's title. (https://cors-anywhere.herokuapp.com/ is used to avoid CORS)
 
 ## Input 
+```
 "@bob @john (success)  (hatred)) such a cool feature; https://google.com"
-
+```
 ## Output:
+```
 {
   "mentions": [
     "bob",
@@ -22,6 +24,7 @@
     }
   ]
 }
+```
 
 ## To Run Locally
 
